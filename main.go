@@ -27,7 +27,7 @@ func main() {
 }
 
 func registerRoutes(db *gorm.DB, router *mux.Router) {
-	router.HandleFunc("/", auth.Login).Methods(http.MethodGet)
+	router.HandleFunc("/login", auth.Login).Methods(http.MethodPost)
 	router.HandleFunc("/signup", auth.Signup).Methods(http.MethodPost)
 }
 
