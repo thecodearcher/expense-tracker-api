@@ -20,7 +20,7 @@ func InitializeDb() *gorm.DB {
 	dbHost := os.Getenv("DB_HOST")
 	dbName := os.Getenv("DB_NAME")
 
-	sqlStr := fmt.Sprintf("%s:%s@tcp(%s:3306)/%s", dbUsername, dbPassword, dbHost, dbName)
+	sqlStr := fmt.Sprintf("%s:%s@tcp(%s:3306)/%s?parseTime=true", dbUsername, dbPassword, dbHost, dbName)
 	db, err := gorm.Open("mysql", sqlStr)
 
 	DB = db
